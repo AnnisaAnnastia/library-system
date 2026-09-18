@@ -1,2 +1,14 @@
-<h1> Kategori Buku </h1>
-<p> E-Book </p>
+@extends('layouts.app')
+
+@section('title', $title)
+
+@section('content')
+    <h1>{{ $title }}</h1>
+    <p> {{ $description }} </p>
+
+    <ul>
+        @foreach ($categories as $category)
+            <li>{{ $category }}</li>
+        @endforeach
+    </ul>
+@endsection

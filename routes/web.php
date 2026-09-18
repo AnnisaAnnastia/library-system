@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookController; //supaya bisa menghubungkan dengan class bookcontroller yg seharusnya
-use App\Http\Controllers\CategoryController; //supaya bisa menghubungkan dengan class categorycontroller yg seharusnya
-use App\Http\Controllers\MemberController; //supaya bisa menghubungkan dengan class membercontroller
+use App\Http\Controllers\BookController; 
+use App\Http\Controllers\CategoryController; 
+use App\Http\Controllers\MemberController; 
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +15,10 @@ Route::get('/', function () {
 //    return view('books.index');
 //});
 
-Route::get('/books', [BookController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::get('/books', [BookController::class, 'index'])->name('buku');
+Route::get('/books/{id}', [BookController::class, 'show']);
+
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/members', [MemberController::class, 'index']);

@@ -6,8 +6,17 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index()
-    {
-        return view('categories.index');
+    public function index(){
+        $title = "Kategori Buku";
+        $description = "Daftar kategori buku";
+        $categories = [
+            'Fiksi',
+            'Non-Fiksi',
+            'Pendidikan',
+            'Sejarah',
+            'Biografi'
+        ];
+        
+        return view('categories.index', compact('title', 'description', 'categories'));
     }
 }
