@@ -8,20 +8,14 @@
 
     <ul>
         @foreach ($books as $book)
-           <li>
-                <strong>{{ $book[0] }}</strong>
-                <br>
-                Penulis: {{ $book[1] }}
-                <br>
-                Tahun: {{ $book[2] }}
-            </li>
-            <br>
+        <li>
+            <h3>{{ $book->title }}</h3>
+            <p>ID Buku: {{ $book->id }}</p>
+            <p>Penulis: {{ $book->author }}</p>
+            <p>Tahun: {{ $book->year }}</p>
+            <p>Stok: {{ $book->stock }}</p>
+            <hr>
+        </li>
         @endforeach
     </ul>
-
-    @if ($stock > 0)
-        <p>Stok tersedia</p>
-    @else
-        <p>Stok habis</p>  
-    @endif
 @endsection
