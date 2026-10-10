@@ -13,7 +13,7 @@
         
        <nav>
             <a href="/dashboard">Dashboard</a> |
-            <a href="{{ route ('buku') }}">Books</a> |
+            <a href="{{ route ('books.index') }}">Books</a> |
             <a href="/categories">Categories</a> |
             <a href="/members">Members</a>
         </nav>
