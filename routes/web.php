@@ -10,14 +10,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/books', function () {
-//    // return 'Daftar Buku';
-//    return view('books.index');
-//});
-
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::resource('books', BookController::class);
-
-Route::get('/categories', [CategoryController::class, 'index']);
-Route::get('/members', [MemberController::class, 'index']);
+Route::resource('categories', CategoryController::class)->except(['show']);
+Route::resource('members', MemberController::class)->except(['show']);

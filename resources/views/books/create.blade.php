@@ -7,43 +7,65 @@
 </head>
 <body>
     <h1>{{ $title }}</h1>
-
-    @if ($errors->any())
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
-
+    
     <form action="{{ route('books.store') }}" method="POST">
         @csrf
 
-        <p>
+        <div>
             <label>Judul Buku</label><br>
-            <input type="text" name="title"
-                   value="{{ old('title') }}" required>
-        </p>
+            <input 
+                type="text" 
+                name="title" 
+                placeholder="Masukkan judul buku"
+                value="{{ old('title') }}">
 
-        <p>
+            @error('title')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div>
             <label>Penulis</label><br>
-            <input type="text" name="author"
-                   value="{{ old('author') }}" required>
-        </p>
+            <input 
+                type="text" 
+                name="author"
+                placeholder="Masukkan nama penulis"
+                value="{{ old('author') }}">
 
-        <p>
+            @error('author')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div>
             <label>Tahun Terbit</label><br>
-            <input type="number" name="year"
-                   value="{{ old('year') }}" required>
-        </p>
+            <input 
+                type="number" 
+                name="year"
+                placeholder="Masukkan tahun terbit"
+                value="{{ old('year') }}">
 
-        <p>
+            @error('year')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div>
             <label>Stok Buku</label><br>
-            <input type="number" name="stock"
-                   value="{{ old('stock') }}" min="0" required>
-        </p>
+            <input 
+                type="number" 
+                name="stock" 
+                placeholder="Masukkan stok buku"
+                value="{{ old('stock') }}">
+        
+            @error('stock')
+                <p>{{ $message }}</p>
+            @enderror
+        </div>
 
-        <button type="submit">Simpan Buku</button>
+        <br>
+        
+        <button type="submit"> Simpan Buku </button>
     </form>
 
     <p>
