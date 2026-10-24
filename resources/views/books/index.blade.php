@@ -17,6 +17,7 @@
                 <p>Penulis: {{ $book->author }}</p>
                 <p>Tahun Terbit: {{ $book->year }}</p>
                 <p>Stok: {{ $book->stock }}</p>
+                <p>Kategori: {{ $book->category->name ?? 'Belum ada kategori' }}</p>
 
                 <a href="{{ route('books.show', $book->id) }}">Detail</a>
                 |
