@@ -35,7 +35,6 @@ class MemberController extends Controller
             ->with('success', 'Data Member berhasil ditambahkan.');
     }
 
-    
     public function edit($id)
     {
         $member = Member::findOrFail($id);
@@ -58,7 +57,6 @@ class MemberController extends Controller
         return redirect()->route('members.index')
             ->with('success', 'Data Member berhasil diperbarui.');
     }
-
     
     public function destroy($id)
     {

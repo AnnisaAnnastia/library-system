@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title }}</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('title', $title)
+
+@section('content')
     <h1>{{ $title }}</h1>
     
     <form action="{{ route('books.store') }}" method="POST">
@@ -79,7 +76,6 @@
                 <p>{{ $message }}</p>
             @enderror
         </div>
-        <br>
         
         <button type="submit"> Simpan Buku </button>
     </form>
@@ -87,5 +83,4 @@
     <p>
         <a href="{{ route('books.index') }}">Kembali ke Daftar Buku</a>
     </p>
-</body>
-</html>
+@endsection
