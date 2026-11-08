@@ -1,0 +1,36 @@
+.detail-card {
+    max-width: 750px;
+    margin-top: 20px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+}
+
+.detail-card p {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin: 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 14px;
+}
+
+.detail-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.detail-actions a {
+    padding: 9px 16px;
+    border-radius: 7px;
+    background: var(--blue-dark);
+    color: white;
+    font-size: 13px;
+}
+
+.detail-actions a:hover {
+    background: #526F86;
+}

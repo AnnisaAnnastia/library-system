@@ -7,6 +7,8 @@
     <title>@yield('title')</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @stack('styles')
 </head>
 <body>
     
@@ -32,19 +34,20 @@
                 </a>
 
                 <a href="{{ route('books.index') }}"
-                   class="{{ request()->is('books*') ? 'active' : '' }}">
+                   class="{{ request()->is('books') ? 'active' : '' }}">
                     Books
                 </a>
 
                 <a href="/categories"
-                   class="{{ request()->is('categories*') ? 'active' : '' }}">
+                   class="{{ request()->is('categories') ? 'active' : '' }}">
                     Categories
                 </a>
 
                 <a href="/members"
-                   class="{{ request()->is('members*') ? 'active' : '' }}">
+                   class="{{ request()->is('members') ? 'active' : '' }}">
                     Members
                 </a>
+
             </nav>
 
             <div class="sidebar-user">

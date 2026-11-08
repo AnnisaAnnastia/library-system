@@ -1,0 +1,172 @@
+.categories-page {
+    width: 100%;
+}
+
+/* DESKRIPSI */
+
+.categories-description {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ALERT */
+
+.categories-alert {
+    margin: 15px 0;
+    padding: 12px 16px;
+    border: 1px solid #B8D4C0;
+    border-radius: 8px;
+    background: var(--success-bg);
+    color: var(--success-text);
+    font-size: 14px;
+}
+
+/* HEADER */
+
+.categories-header {
+    margin-bottom: 20px;
+}
+
+.categories-page .add-category-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 9px;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.categories-page .add-category-btn:hover {
+    background: var(--blue-dark);
+    color: var(--white);
+}
+
+/* LIST KATEGORI */
+
+.categories-page .categories-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* CARD */
+
+.categories-page .category-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    min-width: 0;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 3px 12px rgba(52, 68, 84, 0.04);
+    transition: 0.2s ease;
+}
+
+.categories-page .category-card:hover {
+    border-color: var(--blue-light);
+}
+
+/* INFORMASI KATEGORI */
+
+.category-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.category-name {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.category-description {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* TOMBOL AKSI */
+
+.category-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+}
+
+.categories-page .edit-category-btn {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 7px;
+    background: #EDF2F5;
+    color: var(--blue-dark);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.categories-page .edit-category-btn:hover {
+    background: var(--blue-light);
+    color: var(--text);
+}
+
+/* FORM HAPUS */
+
+.categories-page .delete-category-form {
+    display: inline-flex !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.categories-page .delete-category-btn {
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 5px 10px !important;
+    border: none !important;
+    border-radius: 6px !important;
+    background: #F9EEEC !important;
+    color: var(--danger) !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+}
+
+.categories-page .delete-category-btn:hover {
+    background: #F1DCD8 !important;
+    color: #914F48 !important;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .categories-page .categories-list {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-page .category-card {
+        padding: 18px;
+    }
+}

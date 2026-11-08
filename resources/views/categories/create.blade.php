@@ -2,6 +2,10 @@
 
 @section('title', $title)
 
+@push('styles')
+    @vite('resources/css/categories/create.css')
+@endpush
+
 @section('content')
     <h1>{{ $title }}</h1>
 

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('styles')
+    @vite('resources/css/books/edit.css')
+@endpush
+
 @section('title', $title)
 
 @section('content')

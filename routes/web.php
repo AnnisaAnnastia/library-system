@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MemberController; 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])
@@ -30,4 +31,8 @@ Route::middleware('auth')->group(function(){
     
     Route::resource('categories', CategoryController::class)->except(['show']);
     Route::resource('members', MemberController::class)->except(['show']);
+});
+
+Route::middleware(['auth', 'can:manage-users'])->group(function () {
+    Route::resource('users', UserController::class)->except(['show']);
 });

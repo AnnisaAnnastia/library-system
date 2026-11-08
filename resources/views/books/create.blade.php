@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('styles')
+    @vite('resources/css/books/create.css')
+@endpush
+
 @section('title', $title)
 
 @section('content')
@@ -64,6 +68,7 @@
             <label for="category_id">Kategori</label><br>
             <select name="category_id" id="category_id" required>
                 <option value="">Pilih kategori</option>
+                
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}"
                         @selected(old('category_id') == $category->id)>
@@ -80,7 +85,5 @@
         <button type="submit"> Simpan Buku </button>
     </form>
 
-    <p>
         <a href="{{ route('books.index') }}">Kembali ke Daftar Buku</a>
-    </p>
 @endsection

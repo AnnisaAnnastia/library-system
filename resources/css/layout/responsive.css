@@ -1,0 +1,69 @@
+@media (max-width: 768px) {
+    .app-layout {
+        grid-template-columns: 200px minmax(0, 1fr);
+    }
+
+    .sidebar {
+        padding: 20px;
+    }
+
+    .sidebar-nav {
+        gap: 5px;
+    }
+
+    .sidebar-nav a {
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+
+    .page-content {
+        padding: 22px 18px;
+    }
+
+    .page-content ul:has(.book-card) {
+        grid-template-columns: 1fr;
+    }
+
+    .page-content form:not([style*="inline"]) {
+        padding: 18px;
+    }
+
+    .page-footer {
+        padding: 15px 20px;
+    }
+
+    .topbar {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: relative;
+        height: auto;
+    }
+
+    .sidebar .brand {
+        margin-bottom: 15px;
+    }
+
+    .sidebar-user {
+        margin-top: 20px;
+    }
+
+    .topbar h2 {
+        font-size: 18px;
+    }
+
+    .page-content h1 {
+        font-size: 24px;
+    }
+
+    .page-content h2 {
+        font-size: 19px;
+    }
+}

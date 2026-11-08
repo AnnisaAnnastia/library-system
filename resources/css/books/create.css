@@ -1,0 +1,64 @@
+main h1 {
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+main form {
+    max-width: 720px;
+    margin: 22px 0;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--white);
+}
+
+main form div {
+    margin-bottom: 18px;
+}
+
+main form label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+main form input,
+main form select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+}
+
+main form input:focus,
+main form select:focus {
+    border-color: var(--blue);
+}
+
+main form p {
+    margin: 5px 0;
+    color: var(--danger);
+    font-size: 13px;
+}
+
+main form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--blue-dark);
+    color: white;
+    font-weight: 600;
+}
+
+main > a {
+    color: var(--blue-dark);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    main form {
+        padding: 18px;
+    }
+}

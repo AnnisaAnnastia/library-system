@@ -12,7 +12,6 @@ class BookController extends Controller
     public function index() {
         $title = "Daftar Buku";
         $description = "Daftar buku yang tersedia di perpustakaan";
-
         $books = Book::with('category')->get();
 
         return view('books.index', compact('title', 'description', 'books'));

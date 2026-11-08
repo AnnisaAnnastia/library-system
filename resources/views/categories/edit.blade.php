@@ -2,6 +2,10 @@
 
 @section('title', 'Edit Kategori')
 
+@push('styles')
+    @vite('resources/css/categories/edit.css')
+@endpush
+
 @section('content')
     <h1>Edit Kategori</h1>
 

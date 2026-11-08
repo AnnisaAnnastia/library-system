@@ -1,0 +1,87 @@
+.app-layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 20px;
+    background: var(--blue);
+    color: white;
+}
+
+.sidebar .brand {
+    margin: 0 0 35px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.sidebar-label {
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 11px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 13px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+}
+
+.sidebar-nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.sidebar-nav a.active {
+    background: white;
+    color: var(--blue-dark);
+}
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.user-avatar {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: white;
+    color: var(--blue-dark);
+    font-weight: 700;
+}
+
+.sidebar-user strong {
+    display: block;
+    color: white;
+    font-size: 13px;
+}
+
+.sidebar-user small {
+    color: white;
+    font-size: 11px;
+}
