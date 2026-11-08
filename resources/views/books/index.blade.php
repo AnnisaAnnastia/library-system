@@ -9,7 +9,9 @@
 @section('content')
         <p>{{ $description }}</p>
         
-        <a href="{{ route('books.create') }}">Tambah Buku</a>
+        @can('create', App\Models\Book::class)
+            <a href="{{ route('books.create') }}">Tambah Buku</a>
+        @endcan
         
         <ul>
             @if ($books->count() > 0)
@@ -23,20 +25,27 @@
                         <p>Kategori: {{ $book->category->name ?? 'Belum ada kategori' }}</p>
 
                         <div class="book-actions">
-                            <a href="{{ route('books.show', $book->id) }}">Detail</a>
-                            <a href="{{ route('books.edit', $book->id) }}">| Edit</a>
+                            @can('view', $book)
+                                <a href="{{ route('books.show', $book->id) }}">Detail</a>
+                            @endcan
 
-                            <form action="{{ route('books.destroy', $book->id) }}" 
+                            @can('update', $book)
+                                <a href="{{ route('books.edit', $book->id) }}"> Edit</a>
+                            @endcan
+
+                            @can('delete', $book)
+                                <form action="{{ route('books.destroy', $book->id) }}" 
                                     method="POST" 
                                     style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                
-                                <button type="submit" 
-                                    onclick="return confirm('Apakah Anda yakin ingin menghapus buku ini?')">
-                                    Hapus
-                                </button>
-                            </form>
+                                    @csrf
+                                    @method('DELETE')
+                                    
+                                    <button type="submit" 
+                                        onclick="return confirm('Apakah Anda yakin ingin menghapus buku ini?')">
+                                        Hapus
+                                    </button>
+                                </form>
+                            @endcan
                         </div>
                     </li>
                 @endforeach

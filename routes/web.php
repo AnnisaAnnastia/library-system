@@ -10,7 +10,7 @@ use App\Http\Controllers\UserController;
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])
-        ->name ('login');
+        ->name('login');
 
     Route::post('/login', [AuthController::class, 'login'])
         ->name('login.submit');
@@ -25,14 +25,18 @@ Route::middleware('auth')->group(function(){
     return view('welcome');
     });
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->name('dashboard');
 
     Route::resource('books', BookController::class);
     
-    Route::resource('categories', CategoryController::class)->except(['show']);
-    Route::resource('members', MemberController::class)->except(['show']);
+    Route::resource('categories', CategoryController::class)
+        ->except(['show']);
+    Route::resource('members', MemberController::class)
+        ->except(['show']);
 });
 
 Route::middleware(['auth', 'can:manage-users'])->group(function () {
-    Route::resource('users', UserController::class)->except(['show']);
+    Route::resource('users', UserController::class)
+        ->except(['show']);
 });

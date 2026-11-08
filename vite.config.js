@@ -21,6 +21,8 @@ export default defineConfig({
                 'resources/css/categories/index.css',
                 'resources/css/categories/create.css',
                 'resources/css/categories/edit.css',
+
+                'resources/css/users/edit.css',
             ],
             refresh: true,
         }),

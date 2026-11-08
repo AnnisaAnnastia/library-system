@@ -48,13 +48,23 @@
                     Members
                 </a>
 
+                @can('manage-users')
+                    <a href="{{ route('users.index') }}"
+                       class="{{ request()->is('users') ? 'active' : '' }}">
+                        Users
+                    </a>
+                @endcan
             </nav>
 
             <div class="sidebar-user">
-                <div class="user-avatar">A</div>
+                <div class="user-avatar">
+                    {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
+                </div>
+
+
                 <div>
-                    <strong>Annisa Annastia</strong>
-                    <small>Administrator</small>
+                    <strong>{{ auth()->user()->name }}</strong>
+                    <small>{{ auth()->user()->role }}</small>
                 </div>
             </div>
         </header>
